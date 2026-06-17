@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Snake Game - Landing Page</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🐍 <span>Snake Game</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#jogo">Jogar</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#cta" class="nav-cta">Jogar</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="badge">🎮 Arcade Clássico Reimaginado</span>
+            <h1>O Clássico <br><span class="highlight">Snake</span> em uma Nova Era</h1>
+            <p>
+                Controle a cobra, colete frutas, acumule pontos e desafie seus
+                reflexos em uma experiência inspirada nos maiores sucessos dos
+                videogames retrô.
+            </p>
+            <div class="hero-buttons">
+                <a href="#jogo" class="btn btn-primary">
+                    🎯 Jogar Agora
+                </a>
+                <a href="#recursos" class="btn btn-outline">
+                    Ver Recursos
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero.png" alt="Snake Futurista - Arte Digital">
+        </div>
+    </section>
+
+    <!-- ===== STATS SECTION ===== -->
+    <section class="stats">
+        <div class="stat">
+            <h3>50K+</h3>
+            <p>Jogadores</p>
+        </div>
+        <div class="stat">
+            <h3>1M+</h3>
+            <p>Pontos Marcados</p>
+        </div>
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Estilo Arcade</p>
+        </div>
+        <div class="stat">
+            <h3>∞</h3>
+            <p>Diversão</p>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE SECTION ===== -->
+    <section id="sobre" class="sobre reveal">
+        <div class="sobre-img">
+            <img src="images/gameplay.png" alt="Gameplay do Snake Game">
+        </div>
+        <div class="sobre-text">
+            <span class="section-tag">Sobre o Jogo</span>
+            <h2>Uma Lenda dos <span class="highlight">Videogames</span></h2>
+            <p>
+                Criado na década de 70 e popularizado pelos celulares Nokia,
+                Snake tornou-se um dos jogos mais conhecidos da história dos
+                videogames.
+            </p>
+            <p>
+                O objetivo é simples: controlar a cobra, coletar alimentos
+                espalhados pelo cenário e evitar colisões com as paredes e
+                com o próprio corpo.
+            </p>
+            <ul class="features-list">
+                <li>🎮 Controle intuitivo</li>
+                <li>⭐ Sistema de pontuação</li>
+                <li>📈 Crescimento progressivo</li>
+                <li>🔥 Desafio contínuo</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== RECURSOS SECTION ===== -->
+    <section id="recursos" class="recursos reveal">
+        <span class="section-tag">Recursos</span>
+        <h2>Por que jogar <span class="highlight">Snake</span>?</h2>
+        <p class="section-subtitle">Descubra o que torna esse clássico tão especial</p>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Controle Simples</h3>
+                <p>Movimente a cobra com apenas algumas teclas. Fácil de aprender, difícil de masterizar.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⭐</div>
+                <h3>Sistema de Pontuação</h3>
+                <p>Cada fruta coletada aumenta sua pontuação. Quanto maior a cobra, maior o desafio!</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Dificuldade Progressiva</h3>
+                <p>A velocidade aumenta conforme você avança, testando seus reflexos a cada momento.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🕹️</div>
+                <h3>Estilo Retrô</h3>
+                <p>Design nostálgico que remete aos clássicos arcades dos anos 80 e 90.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JOGO SECTION ===== -->
+    <section id="jogo" class="jogo-section reveal">
+        <span class="section-tag">🎮 Jogue Agora</span>
+        <h2>Experimente o <span class="highlight">Snake</span> no Jardim do Éden</h2>
+        <p class="section-subtitle">Controle a cobra, colete frutas e evite as árvores!</p>
+
+        <div class="jogo-container">
+            <div class="jogo-wrapper">
+                <div class="jogo-header">
+                    <div class="jogo-info">
+                        <span>🍎 <span id="score">0</span></span>
+                        <span>🏆 <span id="best">0</span></span>
+                    </div>
+                </div>
+                <canvas id="game" width="500" height="500"></canvas>
+                <div class="jogo-controls">
+                    <button onclick="restartGame()" class="btn btn-primary">
+                        🔄 Reiniciar
+                    </button>
+                </div>
+                <p class="jogo-hint">⬆️ ⬇️ ⬅️ ➡️ Use as setas para mover</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIA SECTION ===== -->
+    <section id="galeria" class="galeria reveal">
+        <span class="section-tag">Galeria</span>
+        <h2>Visual do <span class="highlight">Jogo</span></h2>
+        <p class="section-subtitle">Veja imagens do Snake Game em ação</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gameplay.png" alt="Gameplay do Snake Game" class="gallery-img">
+                <p class="gallery-caption">🎯 Gameplay do Snake</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/concept.png" alt="Arte Conceitual do Snake Game" class="gallery-img">
+                <p class="gallery-caption">🎨 Arte Conceitual</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section id="cta" class="cta reveal">
+        <div class="cta-content">
+            <span class="badge">🚀 Pronto para o Desafio?</span>
+            <h2>Venha Jogar <span class="highlight">Snake</span> Agora!</h2>
+            <p>
+                Teste seus reflexos, supere seus limites e conquiste o recorde
+                neste clássico atemporal dos videogames.
+            </p>
+            <a href="#jogo" class="btn btn-primary btn-large">
+                🎮 Jogar Snake Game
+            </a>
+            <p class="cta-note">⚡ Gratuito • Sem cadastro • Diversão garantida</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                🐍 <span>Snake Game</span>
+            </div>
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#jogo">Jogar</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#cta">Destaque</a>
+            </div>
+            <div class="footer-info">
+                <p>Aluno: <strong>Edna Del Ry</strong></p>
+                <p>
+                    GitHub:
+                    <a href="https://github.com/ednahellen" target="_blank" class="github-link">
+                        github.com/ednahellen
+                    </a>
+                </p>
+                <p>Desenvolvido em 2026</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Snake Game - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="topBtn" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- ===== MODAL ===== -->
+    <div id="modal" class="modal">
+        <span id="closeModal">&times;</span>
+        <img id="modalImg" alt="Imagem ampliada">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/game.js"></script>
+
+</body>
+</html>
